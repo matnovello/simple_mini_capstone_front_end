@@ -5,6 +5,17 @@ var app = new Vue({
   data: function() {
     return {
       message: "Hello from JavaScript!",
+      todos: [],
     };
   },
+  methods: {
+    loadTodos: function () {
+      axios
+        .get("https://jsonplaceholder.typicode.com/todos")
+        .then(response => {
+          console.log(response.data);
+          this.todos = response.data;
+        });
+    }
+  }
 });
