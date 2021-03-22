@@ -5,16 +5,16 @@ var app = new Vue({
   data: function() {
     return {
       message: "Hello from JavaScript!",
-      todos: [],
+      products:  [],
     };
   },
   methods: {
-    loadTodos: function () {
+    index:  function () {
       axios
-        .get("https://jsonplaceholder.typicode.com/todos")
+        .get("http://localhost:3000/api/products")
         .then(response => {
           console.log(response.data);
-          this.todos = response.data;
+          this. = response.data;
         });
     }
   }
