@@ -10,6 +10,28 @@
   </head>
   <body>
     <h1>Hello from HTML!</h1>
-    <div id="app">{{ message }}</div>
+    <div id="app">
+      {{ message }}
+      <button v-on:click="index">click for index</button>
+      <div v-if="toggleIndex" v-for=" product in products">
+        <p>{{ product.id }} {{ product.name}} , {{product.description}}</p>
+      </div>
+      <hr />
+      <div>
+        <input v-model="input" placeholder="enter id" />
+        <button v-on:click="showProduct">submit</button>
+        <div>{{ singleProduct.id}} {{ singleProduct.name}} {{singleProduct.description}} {{singleProduct.price}}</div>
+      </div>
+      <hr />
+      <div>
+        <form>
+          
+        <input v-model="name" placeholder="enter name" />
+        <input v-model="description" placeholder="enter description"/>
+        <input v-model= "price" placeholder="price"/>
+        <button v-on:click="createProduct">submit</button>
+        <div> {{singleProduct }} </div>
+        </form>
+    </div>
   </body>
 </html>
